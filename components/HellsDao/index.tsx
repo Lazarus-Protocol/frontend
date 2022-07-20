@@ -11,7 +11,10 @@ export const HellsDao: React.FC<IHellsDaoProps> = () => {
 
   return (
     <div style={{
-      background:'radial-gradient(circle, rgba(28,33,27,.8) 0%, rgba(70,90,70,.8) 50%, rgba(28,33,27,.9) 100%)',
+      // background:'radial-gradient(circle, rgba(28,33,27,.8) 0%, rgba(70,90,70,.8) 50%, rgba(28,33,27,.9) 100%)',
+      backgroundImage: 'url(/images/hell2.png)',
+      backgroundRepeat: 'repeat',
+      backgroundSize: 'cover'
     }} className="bg-[#1c211b] w-full h-full">
       {/* <div className="w-full h-full flex justify-start items-start gap-vmd" style={{
         backgroundColor: '#1c211b',
