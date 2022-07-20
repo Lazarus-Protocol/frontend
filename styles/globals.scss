@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './wallpaper.module.scss';
+
+@font-face{
+  font-family: 'dalek';
+  src: url('/fonts/DalekPinpointBold.ttf');
+}
+
+html,
+body {
+  overflow: hidden;
+  background-color:black;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// @keyframes glow {
+//   from {
+//     fill: #6cc4dc;
+//   }
+//   to {
+//     fill: #76e6ea;
+//   }
+// }
+
+
+// @for $i from 2 to 1000 {
+//   @each $color, $value in .cls-#{$i} {
+
+//   }
+//   .cls-#{$i} {
+//     animation: glow 12s infinite;
+//   }
+// }

@@ -1,0 +1,543 @@
+[{
+  "inputs": [],
+  "stateMutability": "nonpayable",
+  "type": "constructor"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": false,
+    "internalType": "bool",
+    "name": "created",
+    "type": "bool"
+  }, {
+    "indexed": true,
+    "internalType": "uint256",
+    "name": "ballotIndex",
+    "type": "uint256"
+  }, {
+    "indexed": true,
+    "internalType": "address",
+    "name": "tokenToAdd",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "internalType": "string",
+    "name": "name",
+    "type": "string"
+  }],
+  "name": "ballotCreated",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": false,
+    "internalType": "address",
+    "name": "creator",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "internalType": "bool",
+    "name": "created",
+    "type": "bool"
+  }, {
+    "indexed": true,
+    "internalType": "uint256",
+    "name": "ballotIndex",
+    "type": "uint256"
+  }],
+  "name": "ballotCreated",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "internalType": "address",
+    "name": "user",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "internalType": "address",
+    "name": "token",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "amount",
+    "type": "uint256"
+  }],
+  "name": "depositTokens",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "internalType": "address",
+    "name": "pool",
+    "type": "address"
+  }],
+  "name": "poolAdded",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "internalType": "uint256",
+    "name": "voteNumber",
+    "type": "uint256"
+  }, {
+    "indexed": true,
+    "internalType": "uint256",
+    "name": "doaID",
+    "type": "uint256"
+  }, {
+    "indexed": true,
+    "internalType": "bool",
+    "name": "cast",
+    "type": "bool"
+  }],
+  "name": "voteCast",
+  "type": "event"
+}, {
+  "anonymous": false,
+  "inputs": [{
+    "indexed": true,
+    "internalType": "address",
+    "name": "user",
+    "type": "address"
+  }, {
+    "indexed": true,
+    "internalType": "address",
+    "name": "token",
+    "type": "address"
+  }, {
+    "indexed": false,
+    "internalType": "uint256",
+    "name": "amount",
+    "type": "uint256"
+  }],
+  "name": "withdrawTokens",
+  "type": "event"
+}, {
+  "inputs": [{
+    "internalType": "address",
+    "name": "user",
+    "type": "address"
+  }],
+  "name": "UIHelper",
+  "outputs": [{
+    "components": [{
+      "internalType": "address",
+      "name": "tokenPool",
+      "type": "address"
+    }, {
+      "internalType": "uint256",
+      "name": "index",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256",
+      "name": "amountDeposited",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256",
+      "name": "poolPriority",
+      "type": "uint256"
+    }, {
+      "internalType": "address[]",
+      "name": "rewardTokens",
+      "type": "address[]"
+    }, {
+      "internalType": "uint256[]",
+      "name": "rewards",
+      "type": "uint256[]"
+    }],
+    "internalType": "struct RedemptionPools.Data[]",
+    "name": "",
+    "type": "tuple[]"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "name": "_tokenName",
+  "outputs": [{
+    "internalType": "string",
+    "name": "",
+    "type": "string"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "name": "_tokensAccepted",
+  "outputs": [{
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+  }],
+  "name": "_tokensDeposited",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "address",
+    "name": "token",
+    "type": "address"
+  }, {
+    "internalType": "string",
+    "name": "name",
+    "type": "string"
+  }],
+  "name": "addToken",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "address",
+    "name": "useToken",
+    "type": "address"
+  }, {
+    "internalType": "address",
+    "name": "pool",
+    "type": "address"
+  }, {
+    "internalType": "uint256",
+    "name": "priorityAdjustment",
+    "type": "uint256"
+  }, {
+    "internalType": "bool",
+    "name": "minusFalseAddTrue",
+    "type": "bool"
+  }],
+  "name": "changePriority",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "inputs": [],
+  "name": "checkBalancerForAll",
+  "outputs": [{
+    "internalType": "address[3]",
+    "name": "",
+    "type": "address[3]"
+  }, {
+    "internalType": "uint256[3]",
+    "name": "",
+    "type": "uint256[3]"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "address[]",
+    "name": "token",
+    "type": "address[]"
+  }, {
+    "internalType": "address",
+    "name": "rewardToken",
+    "type": "address"
+  }],
+  "name": "claim",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "inputs": [],
+  "name": "delayTimer",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "address",
+    "name": "token",
+    "type": "address"
+  }, {
+    "internalType": "address",
+    "name": "rewardToken",
+    "type": "address"
+  }, {
+    "internalType": "uint256",
+    "name": "amount",
+    "type": "uint256"
+  }],
+  "name": "deposit",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "name": "indexToAddress",
+  "outputs": [{
+    "internalType": "address",
+    "name": "",
+    "type": "address"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "name": "indexToString",
+  "outputs": [{
+    "internalType": "string",
+    "name": "",
+    "type": "string"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [],
+  "name": "lastBallot",
+  "outputs": [{
+    "components": [{
+      "internalType": "uint256",
+      "name": "votesToPass",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256",
+      "name": "votesToFail",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256[2]",
+      "name": "votes",
+      "type": "uint256[2]"
+    }, {
+      "internalType": "uint256",
+      "name": "timeToFinish",
+      "type": "uint256"
+    }, {
+      "internalType": "bool",
+      "name": "finished",
+      "type": "bool"
+    }, {
+      "internalType": "bool",
+      "name": "votePass",
+      "type": "bool"
+    }],
+    "internalType": "struct HellBallots.Ballot",
+    "name": "",
+    "type": "tuple"
+  }, {
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }, {
+    "internalType": "string",
+    "name": "",
+    "type": "string"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [],
+  "name": "reccess",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "uint256",
+    "name": "daoId",
+    "type": "uint256"
+  }, {
+    "internalType": "address",
+    "name": "token",
+    "type": "address"
+  }, {
+    "internalType": "string",
+    "name": "tokenName",
+    "type": "string"
+  }],
+  "name": "requestToAddPool",
+  "outputs": [{
+    "internalType": "bool",
+    "name": "",
+    "type": "bool"
+  }],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "inputs": [],
+  "name": "returnRatios",
+  "outputs": [{
+    "internalType": "address[3]",
+    "name": "",
+    "type": "address[3]"
+  }, {
+    "internalType": "uint256[3]",
+    "name": "",
+    "type": "uint256[3]"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [],
+  "name": "setDaoForTeam",
+  "outputs": [{
+    "components": [{
+      "internalType": "uint256",
+      "name": "votesToPass",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256",
+      "name": "votesToFail",
+      "type": "uint256"
+    }, {
+      "internalType": "uint256[2]",
+      "name": "votes",
+      "type": "uint256[2]"
+    }, {
+      "internalType": "uint256",
+      "name": "timeToFinish",
+      "type": "uint256"
+    }, {
+      "internalType": "bool",
+      "name": "finished",
+      "type": "bool"
+    }, {
+      "internalType": "bool",
+      "name": "votePass",
+      "type": "bool"
+    }],
+    "internalType": "struct HellBallots.Ballot",
+    "name": "",
+    "type": "tuple"
+  }, {
+    "internalType": "string",
+    "name": "",
+    "type": "string"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [],
+  "name": "totalPriority",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "uint256",
+    "name": "id",
+    "type": "uint256"
+  }, {
+    "internalType": "bool",
+    "name": "_for",
+    "type": "bool"
+  }],
+  "name": "vote",
+  "outputs": [],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}, {
+  "inputs": [],
+  "name": "voteIndex",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "name": "voteRecord",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "votesToPass",
+    "type": "uint256"
+  }, {
+    "internalType": "uint256",
+    "name": "votesToFail",
+    "type": "uint256"
+  }, {
+    "internalType": "uint256",
+    "name": "timeToFinish",
+    "type": "uint256"
+  }, {
+    "internalType": "bool",
+    "name": "finished",
+    "type": "bool"
+  }, {
+    "internalType": "bool",
+    "name": "votePass",
+    "type": "bool"
+  }],
+  "stateMutability": "view",
+  "type": "function"
+}, {
+  "inputs": [{
+    "internalType": "address",
+    "name": "token",
+    "type": "address"
+  }, {
+    "internalType": "address",
+    "name": "rewardToken",
+    "type": "address"
+  }, {
+    "internalType": "uint256",
+    "name": "amount",
+    "type": "uint256"
+  }],
+  "name": "withdraw",
+  "outputs": [{
+    "internalType": "uint256",
+    "name": "",
+    "type": "uint256"
+  }],
+  "stateMutability": "nonpayable",
+  "type": "function"
+}]
