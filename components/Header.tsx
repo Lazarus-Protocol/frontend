@@ -1,3 +1,4 @@
+import { ToReadableNumber } from '@/common/helpers';
 import { useLazarusTokenStats } from '@/hooks/dapps/lazarus/useStats';
 import { useAccount } from '@/hooks/useAccount';
 import React from 'react';
@@ -19,7 +20,7 @@ export const Header: React.FC<IHeaderProps> = ({onClickDonate}) => {
     <div className='flex w-full justify-end items-center py-vmd px-vsm gap-x-vsm'>
       <AuthenticatedView>
         <div className='flex flex-col gap-[5px]'>
-          <IconLabel label={totalSupply} icon={<WheatIcon fill='rgb(250 204 21)' width={21} height={21}/>} tooltipText="total supply"/>
+          <IconLabel label={ToReadableNumber(totalSupply)} icon={<WheatIcon fill='rgb(250 204 21)' width={21} height={21}/>} tooltipText="total supply"/>
           <IconLabel label={burnedCount} icon={<OmegaIcon fill='rgb(250 204 21)' width={21} height={21}/>} tooltipText="burned count"/>
         </div>
         <Button onClick={onClickDonate} className='bg-yellow-400 hover:bg-yellow-300 text-zinc-700'>DONATE</Button>

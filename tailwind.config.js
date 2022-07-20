@@ -9,9 +9,6 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    fontFamily: {
-      'dalek': ['dalek']
-    },
     typography: {
       DEFAULT: {
         css: {
@@ -117,6 +114,9 @@ module.exports = {
       }
     },
     extend: {
+      fontFamily: {
+        'dalek': ['dalek']
+      },
       animation: {
         'brighten': 'brighten 7s ease-out infinite',
       },

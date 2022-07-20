@@ -27,6 +27,26 @@ a {
 * {
   box-sizing: border-box;
 }
+:root {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+  }
+  &.dark {
+    ::-webkit-scrollbar-thumb {
+      @apply bg-light-200 ;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-light-200 ;
+    }
+  }
+  ::-webkit-scrollbar-thumb {
+    background: black ;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: black ;
+  }
+}
 
 // @keyframes glow {
 //   from {
