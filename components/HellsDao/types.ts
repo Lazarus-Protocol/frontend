@@ -15,3 +15,19 @@ export interface INFT {
   mediaSrc: string;
   imgSrc: string;
 }
+
+export interface IDragableProps {
+  list: INFT[];
+  minLength?: number;
+  selectedNFT: INFT;
+  onSelect: (nft: INFT) => void;
+  onDrop: (nft: INFT, indexPosition?: number) => boolean;
+  dropArea: React.RefObject<any>;
+  itemBorderColor?: string;
+}
+export interface IDragableItem {
+  data: INFT | null;
+  index: number
+  isOccuppied: boolean
+  isSelected: boolean
+}
