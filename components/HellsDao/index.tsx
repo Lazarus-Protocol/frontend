@@ -365,7 +365,7 @@ export const HellsDao: React.FC<IAppModalProps> = ({onClose}) => {
 
   return (
     <div style={{
-      backgroundImage: 'url(/images/hell2.png)',
+      backgroundImage: 'url(/images/hell2.webp)',
       backgroundRepeat: 'repeat',
       backgroundSize: 'cover'
     }} className="bg-[rgb(28,33,27)] w-full h-full flex flex-col justify-between items-center p-vsm relative">
