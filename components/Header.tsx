@@ -19,7 +19,7 @@ export const Header: React.FC<IHeaderProps> = ({onClickDonate}) => {
   return (
     <div className='flex w-full justify-end items-center py-vmd px-vsm gap-x-vsm'>
       <AuthenticatedView>
-        <div className='flex flex-col gap-[5px]'>
+        <div className='flex flex-col gap-vxs'>
           <IconLabel label={ToReadableNumber(totalSupply)} icon={<WheatIcon fill='rgb(250 204 21)' width={21} height={21}/>} tooltipText="total supply"/>
           <IconLabel label={burnedCount} icon={<OmegaIcon fill='rgb(250 204 21)' width={21} height={21}/>} tooltipText="burned count"/>
         </div>
